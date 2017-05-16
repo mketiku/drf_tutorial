@@ -17,5 +17,9 @@ class Snippet(models.Model):
     style = models.CharField(choices=STYLE_CHOICES,
                              default='friendly', max_length=100)
 
+
+    def __str__(self):
+        return "created: {}, title: {}, code: {}".format(self.created, self.title, self.code)
+
     class Meta:
         ordering = ('created',)
